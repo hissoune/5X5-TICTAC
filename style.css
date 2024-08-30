@@ -1,0 +1,118 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+    width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg {
+    position:relative;
+  width: 100%;
+  height: 100%;
+  background-color: #41B3A2; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  text-align: center;
+  
+}
+.content h1{
+    font-size:100px;
+    color:#D7C3F1;
+    padding:0;
+    margin:0;
+}
+.content p{
+    font-size:30px;
+    color:#fff;
+    font-weight:bold;
+}
+
+.start {
+  padding: 10px 20px;
+  font-size: 40px;
+  font-weight:bold;
+  color:#fff;
+  border-radius:20px;
+  background-color:#00C0F5;
+  border:none;
+  cursor: pointer;
+}
+.popup{
+     position:absolute;
+       width:40%;
+       height:60%;
+       display:none;
+}
+.cancelpopup {
+    background-color:transparent;
+    border:none;
+    position:absolute;
+    right:10px;
+    top:5px;
+
+}
+.show{
+    display:block;
+}
+.hide{
+    display:none;
+}
+.popupcontent{
+    position:relative;
+      background-color: #37D7BC; 
+       height:100%;
+
+    padding:20px;
+    border:solid 3px #D9D9D9;
+    border-radius:20px;
+    display: flex;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+.popupcontent div{
+   width:70%;
+   margin:20px 20px;
+}
+.popupcontent div input{
+     width:100%;
+     padding:10px;
+     outline:none;
+     border:0;
+     border-radius:20px;
+}
+
+.Gamebg{
+ width: 100%;
+  height: auto;
+  background-color: #41B3A2; 
+ 
+}
+.fuck{
+    padding:200px;
+  display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.contentGame{
+   
+    
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    gap: 5px;
+}
+.grid-item {
+    width: 60px; 
+    height: 50px; 
+    background-color: lightgray;
+    border: 1px solid #ddd;
+}
