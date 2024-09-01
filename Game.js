@@ -21,14 +21,14 @@ const player1 = players.player1;
 const player2 = players.player2;
 const player1Score = document.createElement('p');
 const player2Score = document.createElement('p');
-player1Score.innerHTML = `${player1.name}+ : ${player1.score}`;
-player2Score.innerHTML = `${player2.name}+ : ${player2.score}`;
+player1Score.innerHTML = `${player1.name} : ${player1.score}`;
+player2Score.innerHTML = `${player2.name} : ${player2.score}`;
 PlayersContainer.append(player1Score ,player2Score)
 PleaseayersContainer.append(PlayersContainer);
 // console.log(player1);
 Welcom.innerHTML = `Welcome !!`;
 GameContainer.append(GameWelcome,PleaseayersContainer,gridContainer)
-let currentPlayer = "X";
+let curentplyer = "X";
 
 const gridSize = 20;  
 const grid = Array(gridSize).fill(null).map(() => Array(gridSize).fill(null));  
@@ -50,6 +50,15 @@ for (let i = 0; i < gridSize * gridSize; i++) {
             gridItem.textContent = curentplyer; 
             if (checkWin(row, col, curentplyer)) {  
                 alert(curentplyer + " wins!");
+                   if (curentplyer === 'X') {
+                players.player1.score++;  
+            } else {
+                players.player2.score++;  
+            }
+
+            localStorage.setItem("Players", JSON.stringify(players));
+
+                console.log(player1.score);
             } else { 
                 curentplyer = curentplyer === "X" ? "O" : "X";
             }
