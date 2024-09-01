@@ -10,13 +10,20 @@
     submitButton.addEventListener("click", function() {
     const firstname = document.getElementById("firstname").value;
     const secondname = document.getElementById("secondname").value;
-        console.log(firstname);
-    if (firstname && secondname) {
-      localStorage.setItem("firstPlayer", firstname);
-      localStorage.setItem("secondPlayer", secondname);
+        // console.log(firstname);
+        if (firstname && secondname) {
+           const Players = {
+  player1: { name: firstname, score: 0 },
+  player2: { name: secondname, score: 0 }
+};
+
+localStorage.setItem("Players", JSON.stringify(Players));
+    //   localStorage.setItem("secondPlayer", secondPlayer);
+    //   localStorage.setItem("secondPlayer", secondPlayer);
 
       window.location.href = "/game.html";
-    } else {
+        } else {
+            
       alert("Please enter names for both players.");
     }
   });
