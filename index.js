@@ -24,17 +24,5 @@
     popup.style.display = "none";
   });
 
-  submitButton.addEventListener("click", function() {
-    const firstname = document.getElementById("firstname").value;
-    const secondname = document.getElementById("secondname").value;
 
-    if (firstname && secondname) {
-      localStorage.setItem("firstPlayer", firstname);
-      localStorage.setItem("secondPlayer", secondname);
-
-      window.location.href = "/game.html";
-    } else {
-      alert("Please enter names for both players.");
-    }
-  });
 
