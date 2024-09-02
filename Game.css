@@ -103,3 +103,36 @@ body, html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.btnContainers{
+  padding:50px;
+ 
+}
+.resetbtn{
+  background-color:#f89e00 ;
+  border:0;
+  padding:10px;
+  font-size:32px;
+  margin-right:10px;
+  border-radius:20px;
+  color:white;
+  cursor:pointer;
+
+}
+.resetbtn:hover{
+  background-color:#887202 ;
+color:lightgray;
+}
+.Endbtn{
+  background-color:#f12407 ;
+  border:0;
+  padding:10px;
+  font-size:32px;
+  margin-right:10px;
+  border-radius:20px;
+  color:white;
+  cursor:pointer;
+}
+.Endbtn:hover{
+  background-color:#6c1205 ;
+color:lightgray;
+}

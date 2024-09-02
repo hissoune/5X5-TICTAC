@@ -6,7 +6,7 @@
   startButton.addEventListener("click", function() {
     popup.style.display = "block";
   });
-
+const PlayersHistory = JSON.parse(localStorage.getItem("PlayersHistory")) || [];
     submitButton.addEventListener("click", function() {
     const firstname = document.getElementById("firstname").value;
     const secondname = document.getElementById("secondname").value;
@@ -15,13 +15,20 @@
            const Players = {
   player1: { name: firstname, score: 0 },
   player2: { name: secondname, score: 0 }
-};
+            };
+            
+       
+            // console.log(PlayersHistory);
+// localStorage.setItem("PlayersHistory", JSON.stringify(PlayersHistory));
 
-localStorage.setItem("Players", JSON.stringify(Players));
+            localStorage.setItem("Players", JSON.stringify(Players));
+            PlayersHistory.push(Players);
+            localStorage.setItem("PlayersHistory", JSON.stringify(PlayersHistory));
+            
     //   localStorage.setItem("secondPlayer", secondPlayer);
     //   localStorage.setItem("secondPlayer", secondPlayer);
 
-      window.location.href = "/game.html";
+            window.location.href = "/game.html";
         } else {
             
       alert("Please enter names for both players.");

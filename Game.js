@@ -11,11 +11,31 @@ GameWelcome.setAttribute('id', 'Game-welcome');
 const welcom = document.createElement('p');
 welcom.textContent = "Tic Tac Toe !";
 GameWelcome.appendChild(welcom)
+const BTNSContainer = document.createElement('div');
+BTNSContainer.classList.add("btnContainers")
 
+const BTNSReset = document.createElement('button');
+BTNSReset.classList.add("resetbtn");
+BTNSReset.textContent="Reset Game"
+const BTNEnd = document.createElement('button');
+BTNEnd.classList.add("Endbtn");
+BTNEnd.textContent="End Game"
+BTNSContainer.append(BTNSReset, BTNEnd);
+BTNSReset.addEventListener("click", function () {
+    window.location.reload();
+});
+const players= JSON.parse(localStorage.getItem("Players"));
+
+const PlayersHistory = [];
+BTNEnd.addEventListener("click", function () {
+    PlayersHistory.push(players);
+    localStorage.setItem("PlayersHistory", JSON.stringify(PlayersHistory));
+    window.location.href = '/index.html';
+
+})
 // GameContainer.appendChild()
 // GameContainer.appendChild()
 // GameContainer.appendChild();
-const players= JSON.parse(localStorage.getItem("Players"));
 const PlayersContainer = document.createElement('div');
 PlayersContainer.classList.add("players");
 const player1 = players.player1;
@@ -29,7 +49,7 @@ player2Score.innerHTML = `<span>${player2.score}</span> : ${player2.name}`;
 PlayersContainer.append(player1Score ,player2Score)
 PleaseayersContainer.append(PlayersContainer);
 // console.log(player1);
-GameContainer.append(GameWelcome,PleaseayersContainer,gridContainer)
+GameContainer.append(GameWelcome,PleaseayersContainer,gridContainer,BTNSContainer)
 let curentplyer = "X";
 
 const gridSize = 20;  
