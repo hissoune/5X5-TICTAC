@@ -6,11 +6,12 @@ const PleaseayersContainer = document.createElement('div');
 PleaseayersContainer.classList.add('PlayersContainer');
 PleaseayersContainer.setAttribute('id', 'PlayersContainer');
 const GameWelcome = document.createElement('div');
-const Welcom = document.createElement('p');
-Welcom.innerHTML = `Welcome !!`;
-GameWelcome.appendChild(Welcom)
 GameWelcome.classList.add('Game-welcome');
 GameWelcome.setAttribute('id', 'Game-welcome');
+const welcom = document.createElement('p');
+welcom.textContent = "Tic Tac Toe !";
+GameWelcome.appendChild(welcom)
+
 // GameContainer.appendChild()
 // GameContainer.appendChild()
 // GameContainer.appendChild();
@@ -19,14 +20,15 @@ const PlayersContainer = document.createElement('div');
 PlayersContainer.classList.add("players");
 const player1 = players.player1;
 const player2 = players.player2;
-const player1Score = document.createElement('p');
-const player2Score = document.createElement('p');
-player1Score.innerHTML = `${player1.name} : ${player1.score}`;
-player2Score.innerHTML = `${player2.name} : ${player2.score}`;
+const player1Score = document.createElement('span');
+player1Score.classList.add("Xplayer")
+const player2Score = document.createElement('span');
+player2Score.classList.add("Oplayer")
+player1Score.innerHTML = `${player1.name} : <span>${player1.score}</span>`;
+player2Score.innerHTML = `<span>${player2.score}</span> : ${player2.name}`;
 PlayersContainer.append(player1Score ,player2Score)
 PleaseayersContainer.append(PlayersContainer);
 // console.log(player1);
-Welcom.innerHTML = `Welcome !!`;
 GameContainer.append(GameWelcome,PleaseayersContainer,gridContainer)
 let curentplyer = "X";
 
@@ -38,6 +40,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
     gridContainer.appendChild(gridItem);
+    const divxo = document.createElement('div');
     
     const row = Math.floor(i / gridSize);
     // console.log(row)
@@ -47,9 +50,16 @@ for (let i = 0; i < gridSize * gridSize; i++) {
     gridItem.addEventListener('click', function () {
         if (grid[row][col] === null) {  
             grid[row][col] = curentplyer;  
-            gridItem.textContent = curentplyer; 
+            divxo.textContent = curentplyer; 
+            if (curentplyer == "X") {
+                divxo.classList.add("Xstyle")
+            }else{
+            divxo.classList.add("Ostyle")
+
+            }
             if (checkWin(row, col, curentplyer)) {  
                 alert(curentplyer + " wins!");
+                    window.location.reload();
                    if (curentplyer === 'X') {
                 players.player1.score++;  
             } else {
@@ -63,6 +73,7 @@ for (let i = 0; i < gridSize * gridSize; i++) {
                 curentplyer = curentplyer === "X" ? "O" : "X";
             }
         }
+        gridItem.appendChild(divxo)
     });
 }
 function checkWin(row, col, player) {

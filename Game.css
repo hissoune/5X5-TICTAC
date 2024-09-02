@@ -9,46 +9,97 @@ body, html {
 }
 
 .Gamebg{
+  padding:2%;
  width: 100%;
   height: auto;
   background-color: #41B3A2; 
-  display:grid;
-  grid-template-columns: repeat(12, 1fr);
-
+  display:flex;
+ flex-direction:column;
+  align-items:center;
+  justify-content:center;
   /* flex-directtion:column;
   align-items:center;
   justify-content:center; */
  
 }
 .Game-welcome{
-  grid-column: span 12;
-  color:white;
-  font-size:50px;
   font-weight:bold;
-text-align:center;
+  text-align:center;
+  font-size: 72px;
+  background: -webkit-linear-gradient(#41B3A2, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
+
 .contentGame{
-  grid-column: span 8; 
-  background-color:blue;
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     grid-template-rows: repeat(20, 1fr);
     gap: 2px;
-    padding:10%;
+    padding:40px;
+    border-radius:20px;
+    background-image: url("images/767ce756b16ac7c5a21e9e7f11a22090.jpg");
 }
 .grid-item {
     width:50px; 
     height: 50px; 
-    background-color: lightgray;
-    border: 1px solid #ddd;
+    border: 5px solid gray;
+    background-color:lightgray;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+}
+.grid-item:hover{
+      background-color:gray;
+
+}
+.Ostyle{
+ font-size: 50px;
+ font-weight:bold;
+  background: -webkit-linear-gradient(#41B3A2, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.Xstyle{
+ font-size: 50px;
+ font-weight:bold;
+  background: -webkit-linear-gradient(#41B3A2, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .PlayersContainer{
-  grid-column: span 4; 
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+      /* background-color: blue; */
+   diplay:flex;
  
-  background-color:#00C0F5;
+}
+.players{
+  diplay:flex;
+  padding:20px;
+}
+.Xplayer{
+     padding:20px;
+      font-size:30px;
+      font-weight:bold;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#fe9b86, #5b1708);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.Oplayer{
+     padding:20px;
+      font-size:30px;
+      font-weight:bold;
+    font-size: 72px;
+    background: -webkit-linear-gradient(#254d50, #09406d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.players span span{
+ font-size: 72px;
+    background: -webkit-linear-gradient(#41B3A2, yellow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
